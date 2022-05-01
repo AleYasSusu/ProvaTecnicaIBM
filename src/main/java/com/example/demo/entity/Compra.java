@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -14,17 +15,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Compra implements Serializable, Comparable<Compra>{
-  private String codigo;
-  private String data;
-  private String cliente;
-  private Produto[] itens;
-  private Double valorTotal;
+public class Compra implements Serializable, Comparable<Compra> {
 
-  @Override
-  public int compareTo(Compra o){
-    if(this.getValorTotal() == o.getValorTotal())
-      return 0;
-    return this.getValorTotal() < o.getValorTotal() ? -1 : 1;
-  }
+	private static final long serialVersionUID = 1L;
+	private String codigo;
+	private String data;
+	private String cliente;
+	private List<Produto> itens;
+	private Double valorTotal;
+
+	@Override
+	public int compareTo(Compra o) {
+		if (this.getValorTotal() == o.getValorTotal())
+			return 0;
+		return this.getValorTotal() < o.getValorTotal() ? -1 : 1;
+	}
 }

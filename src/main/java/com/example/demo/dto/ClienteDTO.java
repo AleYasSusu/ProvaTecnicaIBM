@@ -1,6 +1,4 @@
-package com.example.demo.entity;
-
-import java.io.Serializable;
+package com.example.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -13,10 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Cliente implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-	private int id;
-	private String nome;
-	private String cpf;
+public class ClienteDTO {
+    private String nome;
+    private String cpf;
+    private int quantidadeCompras;
+    private double valorTotalCompras;
 }

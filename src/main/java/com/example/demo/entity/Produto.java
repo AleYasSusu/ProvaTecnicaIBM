@@ -15,10 +15,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Produto implements Serializable {
-  private String produto;
-  private String variedade;
-  private String pais;
-  private String categoria;
-  private String safra;
-  private Double preco;
+
+	private static final long serialVersionUID = 1L;
+	private String produto;
+	private String variedade;
+	private String pais;
+	private String categoria;
+	private String safra;
+	private Double preco;
 }

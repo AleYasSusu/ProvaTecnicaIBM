@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.example.demo.entity.Compra;
 import com.example.demo.util.ApiService;
@@ -39,5 +40,12 @@ public class CompraServiceImpl {
     }
     Collections.sort(comprasDoAno);
     return comprasDoAno.get(comprasDoAno.size() - 1);
+  }
+
+  public List<Compra> findAllPurchaseByCpfClient(String cpf) {
+    List<Compra> todasCompras = this.getListaCompras();
+    return todasCompras.stream()
+            .filter(compra -> compra.getCliente().substring(1).equals(cpf.replaceAll("-", ".")))
+            .collect(Collectors.toList());
   }
 }
