@@ -33,7 +33,7 @@ public class SwaggerConfig {
           .globalResponseMessage(RequestMethod.GET, responseMessageForGET())          
           .apiInfo(apiInfo());
     }
-
+    
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Simple Spring Boot REST API")
